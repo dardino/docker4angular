@@ -44,6 +44,10 @@ RUN npm install -g @angular/cli && \
     webdriver-manager update
 ## ## ## ## ## ## ## ## ## END Angular
 
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
-ENTRYPOINT [ "/bin/sh" ]
+ENTRYPOINT ["entrypoint.sh"]
+
+CMD [ "node" ]
 
