@@ -1,6 +1,5 @@
 FROM node:lts-alpine
 
-LABEL maintainer="gabriele.brunori@grupposandonato.it"
 LABEL version="1.0"
 LABEL name=dardino/angular:testing
 
