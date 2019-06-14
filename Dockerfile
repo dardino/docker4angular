@@ -45,5 +45,5 @@ RUN npm install -g @angular/cli && \
 ## ## ## ## ## ## ## ## ## END Angular
 
 
-ENTRYPOINT [ "bin/sh" ]
+ENTRYPOINT [ "/bin/sh" ]
 
