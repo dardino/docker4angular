@@ -47,7 +47,7 @@ RUN npm install -g @angular/cli && \
 COPY entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 CMD [ "node" ]
 ENTRYPOINT [ "/bin/sh" ]
 
