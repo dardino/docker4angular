@@ -3,6 +3,13 @@ FROM node:lts-alpine
 LABEL version="1.0"
 LABEL name=dardino/angular:testing
 
+## ## ## ## ## ## ## ## ## REPOSITORIES
+RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
+    echo @edge http://nl.alpinelinux.org/alpine/edge/main      >> /etc/apk/repositories && \
+    echo @edge http://nl.alpinelinux.org/alpine/edge/testing   >> /etc/apk/repositories
+## ## ## ## ## ## ## ## ## END REPOSITORIES
+
+
 ## ## ## ## ## ## ## ## ## JAVA
 RUN apk update
 RUN apk fetch openjdk8
@@ -28,8 +35,6 @@ RUN apk add --no-cache --virtual=.run-deps bash ca-certificates git nodejs pytho
 ## ## ## ## ## ## ## ## ## END SONAR
 
 ## ## ## ## ## ## ## ## ## CHROME
-RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
-    echo @edge http://nl.alpinelinux.org/alpine/edge/main      >> /etc/apk/repositories
 RUN apk update && apk upgrade
 RUN apk add --no-cache    chromium@edge    harfbuzz@edge    nss@edge    freetype@edge    ttf-freefont@edge    chromium-chromedriver
 ENV CHROME_BIN=/usr/bin/chromium-browser
@@ -44,6 +49,10 @@ RUN npm install -g @angular/cli && \
     npm install -g typescript && \
     webdriver-manager update
 ## ## ## ## ## ## ## ## ## END Angular
+
+## ## ## ## ## ## ## ## ## FontForge
+RUN apk add fontforge@edge
+## ## ## ## ## ## ## ## ## END FontForge
 
 COPY entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
