@@ -46,6 +46,9 @@ RUN rm -rf /var/cache/* && \
 
 ## ## ## ## ## ## ## ## ## Angular
 RUN npm install -g @angular/cli && \
+    npm install -g node-sass && \
+    npm install -g stylus && \
+    npm install -g less && \
     npm install -g typescript && \
     webdriver-manager update
 ## ## ## ## ## ## ## ## ## END Angular
