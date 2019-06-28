@@ -49,6 +49,7 @@ RUN yarn global add @angular/cli && \
     yarn global add webpack && \
     yarn global add webpack-cli && \
     yarn global add node-sass && \
+    yarn global add sass && \
     yarn global add stylus && \
     yarn global add less && \
     yarn global add typescript && \
