@@ -45,11 +45,14 @@ RUN rm -rf /var/cache/* && \
 ## ## ## ## ## ## ## ## ## END CHROME
 
 ## ## ## ## ## ## ## ## ## Angular
-RUN npm install -g @angular/cli && \
-    npm install -g node-sass && \
-    npm install -g stylus && \
-    npm install -g less && \
-    npm install -g typescript && \
+RUN yarn global add @angular/cli && \
+    yarn global add webpack && \
+    yarn global add webpack-cli && \
+    yarn global add node-sass && \
+    yarn global add stylus && \
+    yarn global add less && \
+    yarn global add typescript && \
+    yarn global add create-react-app && \
     webdriver-manager update
 ## ## ## ## ## ## ## ## ## END Angular
 
