@@ -15,6 +15,7 @@ RUN apk update
 RUN apk fetch openjdk8
 RUN apk add openjdk8
 RUN apk add yarn
+RUN apk add bash
 ## ## ## ## ## ## ## ## ## FINE JAVA
 
 ## ## ## ## ## ## ## ## ## SONAR
