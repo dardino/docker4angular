@@ -1,7 +1,7 @@
 FROM node:lts-alpine
 
-LABEL version="1.0"
-LABEL name=dardino/angular:testing
+LABEL version="1.1"
+LABEL name=dardino/angular:1.1
 
 ## ## ## ## ## ## ## ## ## REPOSITORIES
 RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
@@ -42,7 +42,7 @@ ENV CHROME_BIN=/usr/bin/chromium-browser
 ENV CHROME_PATH=/usr/lib/chromium/
 RUN rm -rf /var/cache/* && \
     mkdir /var/cache/apk && \
-    npm install -g webdriver-manager
+    yarn global add webdriver-manager
 ## ## ## ## ## ## ## ## ## END CHROME
 
 ## ## ## ## ## ## ## ## ## Angular
@@ -55,6 +55,7 @@ RUN yarn global add @angular/cli && \
     yarn global add less && \
     yarn global add typescript && \
     yarn global add create-react-app && \
+    yarn global add npm-cli-login && \
     webdriver-manager update
 ## ## ## ## ## ## ## ## ## END Angular
 
