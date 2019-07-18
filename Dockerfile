@@ -16,6 +16,7 @@ RUN apk fetch openjdk8
 RUN apk add openjdk8
 RUN apk add yarn
 RUN apk add bash
+RUN apk add openssl
 ## ## ## ## ## ## ## ## ## FINE JAVA
 
 ## ## ## ## ## ## ## ## ## SONAR
