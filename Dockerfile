@@ -1,7 +1,7 @@
 FROM node:lts-alpine
 
-LABEL version="1.2"
-LABEL name=dardino/angular:1.2
+LABEL version="1.3"
+LABEL name=dardino/angular:1.3
 
 ## ## ## ## ## ## ## ## ## REPOSITORIES
 RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
@@ -69,5 +69,4 @@ RUN chmod +x /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["entrypoint.sh"]
 
-CMD [ "node" ]
-
+CMD [ "bash" ]
