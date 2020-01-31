@@ -38,7 +38,7 @@ RUN apk add --no-cache --virtual=.run-deps bash ca-certificates git nodejs pytho
 
 ## ## ## ## ## ## ## ## ## CHROME
 RUN apk update && apk upgrade
-RUN apk add --no-cache    chromium@edge    harfbuzz@edge    nss@edge    freetype@edge    ttf-freefont@edge    chromium-chromedriver@edge
+RUN apk add --no-cache  mesa-gles  chromium@edge    harfbuzz@edge    nss@edge    freetype@edge    ttf-freefont@edge    chromium-chromedriver@edge
 ENV CHROME_BIN=/usr/bin/chromium-browser
 ENV CHROME_PATH=/usr/lib/chromium/
 RUN rm -rf /var/cache/* && \
