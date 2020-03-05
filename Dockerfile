@@ -1,7 +1,7 @@
 FROM node:lts-alpine
 
-LABEL version="1.2"
-LABEL name=dardino/angular:1.2
+LABEL version="1.3"
+LABEL name=dardino/angular:1.3
 
 ## ## ## ## ## ## ## ## ## REPOSITORIES
 RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
@@ -38,23 +38,32 @@ RUN apk add --no-cache --virtual=.run-deps bash ca-certificates git nodejs pytho
 
 ## ## ## ## ## ## ## ## ## CHROME
 RUN apk update && apk upgrade
-RUN apk add --no-cache    chromium@edge    harfbuzz@edge    nss@edge    freetype@edge    ttf-freefont@edge    chromium-chromedriver@edge
+RUN apk add --no-cache  mesa-gles@edge       \ 
+                        chromium@edge        \ 
+                        nss@edge             \
+                        freetype@edge        \ 
+                        freetype-dev@edge    \
+                        harfbuzz@edge        \ 
+                        ca-certificates@edge \
+                        ttf-freefont@edge    \ 
+                        chromium-chromedriver@edge
 ENV CHROME_BIN=/usr/bin/chromium-browser
 ENV CHROME_PATH=/usr/lib/chromium/
 RUN rm -rf /var/cache/* && \
     mkdir /var/cache/apk && \
     yarn global add webdriver-manager
+RUN alias chrome=/usr/bin/chromium-browser
 ## ## ## ## ## ## ## ## ## END CHROME
 
 ## ## ## ## ## ## ## ## ## Angular
-RUN yarn global add @angular/cli && \
+RUN yarn global add @angular/cli@9.0.1 && \
     yarn global add webpack && \
     yarn global add webpack-cli && \
     yarn global add node-sass && \
     yarn global add sass && \
     yarn global add stylus && \
     yarn global add less && \
-    yarn global add typescript && \
+    yarn global add typescript@3.8.3 && \
     yarn global add create-react-app && \
     yarn global add npm-cli-login && \
     webdriver-manager update
@@ -69,5 +78,4 @@ RUN chmod +x /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["entrypoint.sh"]
 
-CMD [ "node" ]
-
+CMD [ "bash" ]
