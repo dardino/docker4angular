@@ -38,18 +38,21 @@ RUN apk add --no-cache --virtual=.run-deps bash ca-certificates git nodejs pytho
 
 ## ## ## ## ## ## ## ## ## CHROME
 RUN apk update && apk upgrade
-RUN apk add --no-cache  mesa-gles@edge    \ 
-                        chromium@edge     \ 
-                        harfbuzz@edge     \ 
-                        nss@edge          \
-                        freetype@edge     \ 
-                        ttf-freefont@edge \ 
+RUN apk add --no-cache  mesa-gles@edge       \ 
+                        chromium@edge        \ 
+                        nss@edge             \
+                        freetype@edge        \ 
+                        freetype-dev@edge    \
+                        harfbuzz@edge        \ 
+                        ca-certificates@edge \
+                        ttf-freefont@edge    \ 
                         chromium-chromedriver@edge
 ENV CHROME_BIN=/usr/bin/chromium-browser
 ENV CHROME_PATH=/usr/lib/chromium/
 RUN rm -rf /var/cache/* && \
     mkdir /var/cache/apk && \
     yarn global add webdriver-manager
+RUN alias chrome=/usr/bin/chromium-browser
 ## ## ## ## ## ## ## ## ## END CHROME
 
 ## ## ## ## ## ## ## ## ## Angular
