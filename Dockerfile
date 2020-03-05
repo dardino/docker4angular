@@ -38,7 +38,13 @@ RUN apk add --no-cache --virtual=.run-deps bash ca-certificates git nodejs pytho
 
 ## ## ## ## ## ## ## ## ## CHROME
 RUN apk update && apk upgrade
-RUN apk add --no-cache  mesa-gles  chromium@edge    harfbuzz@edge    nss@edge    freetype@edge    ttf-freefont@edge    chromium-chromedriver@edge
+RUN apk add --no-cache  mesa-gles@edge    \ 
+                        chromium@edge     \ 
+                        harfbuzz@edge     \ 
+                        nss@edge          \
+                        freetype@edge     \ 
+                        ttf-freefont@edge \ 
+                        chromium-chromedriver@edge
 ENV CHROME_BIN=/usr/bin/chromium-browser
 ENV CHROME_PATH=/usr/lib/chromium/
 RUN rm -rf /var/cache/* && \
@@ -47,14 +53,14 @@ RUN rm -rf /var/cache/* && \
 ## ## ## ## ## ## ## ## ## END CHROME
 
 ## ## ## ## ## ## ## ## ## Angular
-RUN yarn global add @angular/cli && \
+RUN yarn global add @angular/cli@9.0.1 && \
     yarn global add webpack && \
     yarn global add webpack-cli && \
     yarn global add node-sass && \
     yarn global add sass && \
     yarn global add stylus && \
     yarn global add less && \
-    yarn global add typescript && \
+    yarn global add typescript@3.8.3 && \
     yarn global add create-react-app && \
     yarn global add npm-cli-login && \
     webdriver-manager update
