@@ -1,7 +1,7 @@
 FROM node:lts-alpine
 
-LABEL version="1.4"
-LABEL name=dardino/angular:1.4
+LABEL version="1.5"
+LABEL name=dardino/angular:1.5
 
 ## ## ## ## ## ## ## ## ## REPOSITORIES
 RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
@@ -51,22 +51,22 @@ ENV CHROME_BIN=/usr/bin/chromium-browser
 ENV CHROME_PATH=/usr/lib/chromium/
 RUN rm -rf /var/cache/* && \
     mkdir /var/cache/apk && \
-    yarn global add webdriver-manager
+    yarn global add webdriver-manager@12.1.7
 RUN alias chrome=/usr/bin/chromium-browser
 ## ## ## ## ## ## ## ## ## END CHROME
 
 ## ## ## ## ## ## ## ## ## Angular
-RUN yarn global add @angular/cli@9.1.3     && \
-    yarn global add create-react-app@3.4.1 && \
-    yarn global add express@4.17.1         && \
-    yarn global add less@3.11.1            && \
-    yarn global add node-sass@4.13.1       && \
-    yarn global add npm-cli-login@0.1.1    && \
-    yarn global add sass@1.26.3            && \
-    yarn global add stylus@0.54.7          && \
-    yarn global add typescript@3.8.3       && \
-    yarn global add webpack@4.43.0         && \
-    yarn global add webpack-cli@3.3.11     && \
+RUN yarn global add @angular/cli@10.0.3     && \
+    yarn global add create-react-app@3.4.1  && \
+    yarn global add express@4.17.1          && \
+    yarn global add less@3.12.2             && \
+    yarn global add node-sass@4.14.1        && \
+    yarn global add npm-cli-login@0.1.1     && \
+    yarn global add sass@1.26.10            && \
+    yarn global add stylus@0.54.8           && \
+    yarn global add typescript@3.9.7        && \
+    yarn global add webpack@4.43.0          && \
+    yarn global add webpack-cli@3.3.12      && \
     webdriver-manager update
 ## ## ## ## ## ## ## ## ## END Angular
 
