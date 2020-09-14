@@ -1,7 +1,7 @@
 FROM node:lts-alpine
 
-LABEL version="1.5"
-LABEL name=dardino/angular:1.5
+LABEL version="1.6"
+LABEL name=dardino/angular:1.6
 
 ## ## ## ## ## ## ## ## ## REPOSITORIES
 RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
