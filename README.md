@@ -34,6 +34,8 @@ docker pull dardino/angular:latest
 
 ### yarn/npm (global)
 
+* [x] full-icu         : 1.3.1
+* [x] cross-env        : 7.0.2
 * [x] webdriver-manager: 12.1.7
 * [x] @angular/cli     : 10.0.3
 * [x] create-react-app : 3.4.1

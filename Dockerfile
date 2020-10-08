@@ -1,7 +1,7 @@
 FROM node:lts-alpine
 
-LABEL version="1.6"
-LABEL name=dardino/angular:1.6
+LABEL version="1.7"
+LABEL name=dardino/angular:1.7
 
 ## ## ## ## ## ## ## ## ## REPOSITORIES
 RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
@@ -56,8 +56,9 @@ RUN alias chrome=/usr/bin/chromium-browser
 ## ## ## ## ## ## ## ## ## END CHROME
 
 ## ## ## ## ## ## ## ## ## Nodejs packages
-
-RUN yarn global add @angular/cli@10.1.1        && \
+RUN yarn global add full-icu@1.3.1             && \
+    yarn global add cross-env@7.0.2            && \
+    yarn global add @angular/cli@10.1.1        && \
     yarn global add create-react-app@3.4.1     && \
     yarn global add express@4.17.1             && \
     yarn global add less@3.12.2                && \
