@@ -1,7 +1,21 @@
 FROM node:lts-alpine
 
-LABEL version="1.7"
-LABEL name=dardino/angular:1.7
+LABEL version="0.0.7"
+LABEL name=dardino/angular:0.0.7
+LABEL "full-icu"=1.3.1
+LABEL "cross-env"=7.0.2
+LABEL "@angular/cli"=10.1.1
+LABEL "create-react-app"=3.4.1
+LABEL "express"=4.17.1
+LABEL "less"=3.12.2
+LABEL "node-sass"=4.14.1
+LABEL "npm-cli-login"=0.1.1
+LABEL "sass"=1.26.1
+LABEL "stylus"=0.54.8
+LABEL "typescript"=4.0.2
+LABEL "webpack-cli"=3.3.1
+LABEL "webpack"=4.44.1
+
 
 ## ## ## ## ## ## ## ## ## REPOSITORIES
 RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
@@ -70,7 +84,7 @@ RUN yarn global add full-icu@1.3.1             && \
     yarn global add webpack-cli@3.3.12         && \
     yarn global add webpack@4.44.1             && \
     webdriver-manager update
-
+ENV NODE_ICU_DATA=/usr/local/share/.config/yarn/global/node_modules/full-icu
 ## ## ## ## ## ## ## ## ## END Angular
 
 ## ## ## ## ## ## ## ## ## FontForge
