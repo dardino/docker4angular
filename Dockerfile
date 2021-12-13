@@ -3,20 +3,20 @@ FROM node:lts-alpine
 LABEL version="0.0.9"
 LABEL name=dardino/angular:0.0.9
 
-LABEL "webdriver-manager"=12.1.8
-LABEL "full-icu"=1.3.4
-LABEL "cross-env"=7.0.3
-LABEL "@angular/cli"=12.1.4
+LABEL "@angular/cli"=13.1.1
 LABEL "create-react-app"=4.0.3
 LABEL "express"=4.17.1
-LABEL "less"=4.1.1
-LABEL "node-sass"=6.0.1
-LABEL "npm-cli-login"=0.1.1
-LABEL "sass"=1.36.0
-LABEL "stylus"=0.54.8
-LABEL "typescript"=4.3.5
-LABEL "webpack-cli"=4.7.2
-LABEL "webpack"=5.47.1
+LABEL "less"=4.1.2
+LABEL "node-sass"=7.0.0
+LABEL "npm-cli-login"=1.0.0
+LABEL "sass"=1.45.0
+LABEL "stylus"=0.55.0
+LABEL "typescript"=4.5.3
+LABEL "webdriver-manager"=12.1.8
+LABEL "webpack-cli"=4.9.1
+LABEL "full-icu"=1.4.0
+LABEL "cross-env"=7.0.3
+LABEL "webpack"=5.65.0
 
 
 ## ## ## ## ## ## ## ## ## REPOSITORIES
@@ -29,17 +29,14 @@ RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repos
 ## ## ## ## ## ## ## ## ## JAVA
 RUN apk update
 RUN apk fetch openjdk8
-RUN apk add openjdk8
-RUN apk add yarn
-RUN apk add bash
-RUN apk add openssl
+RUN apk add --no-cache openjdk8 yarn bash openssl zip unzip wget curl
 ## ## ## ## ## ## ## ## ## FINE JAVA
 
 ## ## ## ## ## ## ## ## ## SONAR
 ENV VERSION=3.3.0.1492 \
     PATH=$PATH:/opt/sonar-scanner/bin
 
-RUN apk add --no-cache --virtual=.run-deps bash ca-certificates git nodejs python3 && \
+RUN apk add --no-cache --virtual=.run-deps bash ca-certificates git nodejs python3 py3-pip && \
     apk add --no-cache --virtual=.build-deps build-base python3-dev unzip wget && \
     python3 -m pip install --upgrade pip && \
     python3 -m pip install pylint~=2.2.2 && \
