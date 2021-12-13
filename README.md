@@ -34,17 +34,17 @@ docker pull dardino/angular:latest
 
 ### yarn/npm (global)
 
-* [x] @angular/cli       : 12.1.4
-* [x] create-react-app   : 4.0.3
-* [x] express            : 4.17.1
-* [x] less               : 4.1.1
-* [x] node-sass          : 6.0.1
-* [x] npm-cli-login      : 0.1.1
-* [x] sass               : 1.36.0
-* [x] stylus             : 0.54.8
-* [x] typescript         : 4.3.5
-* [x] webdriver-manager  : 12.1.8
-* [x] webpack-cli        : 4.7.2
-* [x] full-icu           : 1.3.4
-* [x] cross-env          : 7.0.3
-* [x] webpack            : 5.47.1
+* [x] @angular/cli      : 13.1.1
+* [x] create-react-app  : 4.0.3
+* [x] express           : 4.17.1
+* [x] less              : 4.1.2
+* [x] node-sass         : 7.0.0
+* [x] npm-cli-login     : 1.0.0
+* [x] sass              : 1.45.0
+* [x] stylus            : 0.55.0
+* [x] typescript        : 4.5.3
+* [x] webdriver-manager : 12.1.8
+* [x] webpack-cli       : 4.9.1
+* [x] full-icu          : 1.4.0
+* [x] cross-env         : 7.0.3
+* [x] webpack           : 5.65.0

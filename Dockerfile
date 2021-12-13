@@ -1,7 +1,7 @@
 FROM node:lts-alpine
 
-LABEL version="0.0.8"
-LABEL name=dardino/angular:0.0.8
+LABEL version="0.0.9"
+LABEL name=dardino/angular:0.0.9
 
 LABEL "webdriver-manager"=12.1.8
 LABEL "full-icu"=1.3.4
@@ -71,21 +71,20 @@ RUN rm -rf /var/cache/* && \
 RUN alias chrome=/usr/bin/chromium-browser
 ## ## ## ## ## ## ## ## ## END CHROME
 
-
 ## ## ## ## ## ## ## ## ## Nodejs packages
-RUN yarn global add full-icu@1.3.4           && \
-    yarn global add cross-env@7.0.3          && \
-    yarn global add @angular/cli@12.1.4      && \
-    yarn global add create-react-app@4.0.3   && \
-    yarn global add express@4.17.1           && \
-    yarn global add less@4.1.1               && \
-    yarn global add node-sass@6.0.1          && \
-    yarn global add npm-cli-login@0.1.1      && \
-    yarn global add sass@1.36.0              && \
-    yarn global add stylus@0.54.8            && \
-    yarn global add typescript@4.3.5         && \
-    yarn global add webpack-cli@4.7.2        && \
-    yarn global add webpack@5.47.1           && \
+RUN yarn global add @angular/cli@13.1.1  && \
+    yarn global add create-react-app@4.0.3  && \
+    yarn global add express@4.17.1  && \
+    yarn global add less@4.1.2  && \
+    yarn global add node-sass@7.0.0  && \
+    yarn global add npm-cli-login@1.0.0  && \
+    yarn global add sass@1.45.0  && \
+    yarn global add stylus@0.55.0  && \
+    yarn global add typescript@4.5.3  && \
+    yarn global add webpack-cli@4.9.1  && \
+    yarn global add full-icu@1.4.0  && \
+    yarn global add cross-env@7.0.3  && \
+    yarn global add webpack@5.65.0  && \
     webdriver-manager update
 ENV NODE_ICU_DATA=/usr/local/share/.config/yarn/global/node_modules/full-icu
 ## ## ## ## ## ## ## ## ## END Angular
